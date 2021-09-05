@@ -164,6 +164,7 @@ the latest stable version will be downloaded from the repository.`,
 		newMirrorCmd(),
 		newTelemetryCmd(),
 		newEnvCmd(),
+		newShellCmd(),
 	)
 
 	originHelpFunc := rootCmd.HelpFunc()

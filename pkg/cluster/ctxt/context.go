@@ -153,19 +153,19 @@ func (ctx *Context) SetExecutor(host string, e Executor) {
 
 // GetOutputs get the outputs of a host (if has any)
 func (ctx *Context) GetOutputs(hostID string) ([]byte, []byte, bool) {
-	ctx.mutex.RLock()
+	// ctx.mutex.RLock()
 	stdout, ok1 := ctx.exec.stderrs[hostID]
 	stderr, ok2 := ctx.exec.stdouts[hostID]
-	ctx.mutex.RUnlock()
+	// ctx.mutex.RUnlock()
 	return stdout, stderr, ok1 && ok2
 }
 
 // SetOutputs set the outputs of a host
 func (ctx *Context) SetOutputs(hostID string, stdout []byte, stderr []byte) {
-	ctx.mutex.Lock()
+	// ctx.mutex.Lock()
 	ctx.exec.stderrs[hostID] = stdout
 	ctx.exec.stdouts[hostID] = stderr
-	ctx.mutex.Unlock()
+	// ctx.mutex.Unlock()
 }
 
 // GetCheckResults get the the check result of a host (if has any)

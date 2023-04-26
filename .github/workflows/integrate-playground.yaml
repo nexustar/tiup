@@ -28,6 +28,9 @@ on:
       - '.github/workflows/integrate-cluster**'
       - '.github/workflows/integrate-dm**'
       - '.github/workflows/integrate-tiup**'
+      - 'tests/tiup/**'
+      - 'tests/tiup-cluster/**'
+      - 'tests/tiup-dm/**'
 
 jobs:
   playground:
